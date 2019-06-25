@@ -3,6 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+```
+npm i react-redux
+npm i redux
+npm start
+```
 
 ### `npm start`
 
