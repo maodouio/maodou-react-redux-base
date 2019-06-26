@@ -1,11 +1,7 @@
 import React from 'react';
 import CoursesContainer from './containers/CoursesContainer'
-import getCourses from './api/'
 
 function App() {
-  const courses = getCourses()
-  console.log('[App.js] getCourses', courses)
-
   return (
     <div className="App">
       <header className="App-header">
@@ -24,7 +20,7 @@ function App() {
       <div>
         <h2>Maodou Courses Example</h2>
         <hr/>
-        <CoursesContainer courses={courses}/>
+        <CoursesContainer />
         <hr/>
       </div>
     </div>
