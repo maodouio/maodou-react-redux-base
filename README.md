@@ -9,6 +9,7 @@ npm i redux
 npm i axios
 npm i debug
 npm i redux-thunk
+npm i react-router-dom
 npm start
 ```
 
