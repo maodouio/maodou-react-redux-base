@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Course = ({ title, members }) => (
+const Course = ({ course }) => (
 	<div>
-		课程名称：{title}
+		课程名称：<a href={'/course/'+course._id}>{course.name}</a>
 		<br />
-		成员人数：{members.length}
+		讲师：{course.author}
 		<br />
-		名单：{members.map((m, index) => m + (index === members.length - 1 ?  '' : ', ') )}
+		{ course.duration ? '时长：' + course.duration + '分钟' : ''}
 	</div>
 )
 

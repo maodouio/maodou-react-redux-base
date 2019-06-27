@@ -6,6 +6,9 @@ In the project directory, you can run:
 ```
 npm i react-redux
 npm i redux
+npm i axios
+npm i debug
+npm i redux-thunk
 npm start
 ```
 

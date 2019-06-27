@@ -5,9 +5,18 @@ import App from './App';
 // these are from redux
 import rootReducer from './reducers'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 
-const store = createStore(rootReducer)
+import thunk from 'redux-thunk'
+const middlewares = [thunk]
+
+const composedEnhancers = compose(
+  applyMiddleware(...middlewares)
+)
+
+const initialState = {}
+
+const store = createStore(rootReducer, initialState, composedEnhancers)
 
 ReactDOM.render(
 	<Provider store={store}>

@@ -4,11 +4,10 @@ import Course from './Course'
 const CourseItem = ({ course, handleClick }) => (
 	<div>
 		<Course 
-			title={course.title} 
-			members={course.members}
+			course={course}
 		/>
 		<button onClick={handleClick}>
-			删除课程
+			关注课程
 		</button>
 		<p />
 	</div>

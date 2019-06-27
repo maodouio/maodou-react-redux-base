@@ -12,7 +12,7 @@ const AddCourse = ({ handleSubmit }) => {
         if (!input.value.trim()) {
           return
         }
-        console.log('in form submit, dispatching..')
+        console.log('[form submit] handleSubmit input: ', input.value)
         // dispatch(addCourse(input.value))
         handleSubmit(input.value)
         input.value = ''
