@@ -1,30 +1,28 @@
+import {
+  SHOW_COURSE_SUCCESS,
+  GET_COURSES_SUCCESS,
+} from "../actions/actionTypes"
 
 const defaultState = {
 	coursesArray: [],
+	courseInfo: {},
 }
 
-//const course = (state = defaultState, action) => {
 export default (state = defaultState, action) => {
 	console.log('[reducer]', state, action)
 	const payload = action.payload
 
 	switch (action.type) {
-		// case 'ADD_COURSE':
-		// 	return [
-		// 		...state,
-		// 		{
-		// 			_id: new Date().toLocaleString(),
-		// 			title: action.title,
-		// 			members: []
-		// 		}
-		// 	]
-		// case 'DEL_COURSE':
-		// 	return state.filter(c => c._id !== action.id)
-		case 'GET_COURSES_SUCCESS':
+		case GET_COURSES_SUCCESS:
 			return {
 				...state,
 				coursesArray: payload
 			}
+	    case SHOW_COURSE_SUCCESS:
+			return {
+				...state,
+				courseInfo: payload
+			};
 		default:
 			console.log('default')
 			return state
