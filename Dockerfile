@@ -1,5 +1,5 @@
 # 此基础镜像已包含上海时区
-FROM hub.tencentyun.com/maodou_hub/maodou-kid:node10.15-slim
+FROM node:10.16-slim
 
 #创建app目录,保存我们的代码
 RUN mkdir -p /usr/src/node/build
