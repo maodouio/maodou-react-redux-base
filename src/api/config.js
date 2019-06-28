@@ -1,2 +1,2 @@
 
-export const API_URL = 'https://live.maodou.io/api'
+export const API_URL = 'https://xichuang.maodou.io/api'
