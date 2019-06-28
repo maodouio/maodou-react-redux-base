@@ -17,6 +17,7 @@ class ChatsContainer extends Component {
 		const course_id = this.props && this.props.course_id
 		console.log('course_id', course_id)
 		this.props.fetchData(actionGetChats(course_id))
+		this.props.fetchData(actionAddChat(course_id, "guest", "test"))
 	}
 
 	componentWillMount() {
