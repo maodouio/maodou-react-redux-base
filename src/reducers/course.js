@@ -9,7 +9,7 @@ const defaultState = {
 }
 
 export default (state = defaultState, action) => {
-	console.log('[reducer]', state, action)
+	console.log('[course reducer]', state, action)
 	const payload = action.payload
 
 	switch (action.type) {
@@ -24,7 +24,7 @@ export default (state = defaultState, action) => {
 				courseInfo: payload
 			};
 		default:
-			console.log('default')
+			console.log('[reducer] default')
 			return state
 	}
 }

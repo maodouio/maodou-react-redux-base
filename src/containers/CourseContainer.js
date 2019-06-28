@@ -8,6 +8,8 @@ import { connect } from 'react-redux'
 
 import Hls from 'hls.js'
 
+import ChatsContainer from './ChatsContainer'
+
 class CourseContainer extends Component {
 	componentDidMount() {
 		const {
@@ -60,13 +62,21 @@ class CourseContainer extends Component {
 							</video>
 						</div>
 				}
+
+				{c._id ?
+						<div>
+							<ChatsContainer course_id={c._id}/>
+						</div>
+					:
+						<div></div>
+				}
 			</div>
 		)
 	}
 }
 
 const mapStateToProps = state => {
-	console.log('mapStateToProps', state)
+	console.log('[CourseContainer] mapStateToProps', state)
 	const { course } = state
 	return course
 }
