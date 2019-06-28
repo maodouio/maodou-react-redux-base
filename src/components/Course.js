@@ -6,6 +6,8 @@ const Course = ({ course }) => (
 		<br />
 		讲师：{course.author}
 		<br />
+		直播状态：{course.state}
+		<br />
 		{ course.duration ? '时长：' + course.duration + '分钟' : ''}
 	</div>
 )
