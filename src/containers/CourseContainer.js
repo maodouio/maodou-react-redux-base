@@ -34,17 +34,17 @@ class CourseContainer extends Component {
 		console.log('courseInfo', courseInfo)
 
 		const c = courseInfo
+		// <h3>{c.name}</h3>
+		// <img width='30px' alt={c.name} src={c.thumbnail} />
+		// <p>{c.author}</p>
+		// <p>{c.intro}</p>
+		// <p>{c.state}</p>
+		// <a href={c.recordUrl && c.recordUrl.mp4}>视频回放链接</a>
+		// <hr />
 		return (
 			<div>
-				<h3>{c.name}</h3>
-				<img width='30px' alt={c.name} src={c.thumbnail} />
-				<p>{c.author}</p>
-				<p>{c.intro}</p>
-				<p>{c.state}</p>
 				{c.state === 'PLAYBACK' ?
 						<div>
-							<a href={c.recordUrl && c.recordUrl.mp4}>视频回放链接</a>
-							<hr />
 							<video src={c.recordUrl && c.recordUrl.mp4} width="100%" controls autoPlay>
 							    Sorry, your browser doesn't support embedded videos.
 							</video>
