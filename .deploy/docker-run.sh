@@ -6,7 +6,7 @@ docker run \
        --restart=always \
        -p 8800:5000 \
        -e TZ=Asia/Shanghai \
-       -e VIRTUAL_HOST=base.maodouketang.com \
-       -e LETSENCRYPT_HOST=base.maodouketang.com \
+       -e VIRTUAL_HOST=ke.maodoulive.com \
+       -e LETSENCRYPT_HOST=ke.maodoulive.com \
        -e LETSENCRYPT_EMAIL=dev@maodou.io \
        maodou-react-redux-base:latest
