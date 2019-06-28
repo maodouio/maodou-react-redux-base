@@ -10,6 +10,7 @@ npm i axios
 npm i debug
 npm i redux-thunk
 npm i react-router-dom
+npm i hls.js
 npm start
 ```
 
