@@ -11,7 +11,7 @@ import { bindActionCreators } from "redux"
 import AddChat from '../components/ChatNew'
 import { actionAddChat } from '../actions/chat'
 
-class ChatsContainer extends Component {
+class TestContainer extends Component {
 	componentDidMount() {
 		console.log('this.props', this.props)
 		const course_id = this.props && this.props.course_id
@@ -56,7 +56,7 @@ class ChatsContainer extends Component {
 
 		return (
 			<div>
-				<AddChat handleSubmit={this.handleAddChat}/>
+				<h1>压力测试</h1>
 				<hr/>
 				{ chats && chats.map(c =>
 					<div key={c.createdAt}>
@@ -70,7 +70,7 @@ class ChatsContainer extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log('[ChatsContainer] mapStateToProps', state)
+	console.log('[TestContainer] mapStateToProps', state)
 	const { chat } = state
 	return chat
 }
@@ -81,4 +81,4 @@ const mapDispatchToProps = dispatch =>
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(ChatsContainer)
+)(TestContainer)

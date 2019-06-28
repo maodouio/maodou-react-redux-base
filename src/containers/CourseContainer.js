@@ -9,6 +9,8 @@ import { connect } from 'react-redux'
 import Hls from 'hls.js'
 
 import ChatsContainer from './ChatsContainer'
+import AddChat from '../components/ChatNew'
+import { actionAddChat } from '../actions/chat'
 
 class CourseContainer extends Component {
 	componentDidMount() {
@@ -34,6 +36,8 @@ class CourseContainer extends Component {
 	render() {
 		const { courseInfo } = this.props
 		console.log('courseInfo', courseInfo)
+
+		this.props.fetchData(actionAddChat(courseInfo._id, "guest", courseInfo.commentCount+1))
 
 		const c = courseInfo
 		// <h3>{c.name}</h3>
