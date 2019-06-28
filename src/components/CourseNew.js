@@ -13,7 +13,6 @@ const AddCourse = ({ handleSubmit }) => {
           return
         }
         console.log('[form submit] handleSubmit input: ', input.value)
-        // dispatch(addCourse(input.value))
         handleSubmit(input.value)
         input.value = ''
       }}>
