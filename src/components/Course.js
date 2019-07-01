@@ -8,7 +8,7 @@ const Course = ({ course }) => (
 		<br />
 		直播状态：{course.state}
 		<br />
-		{ course.duration ? '时长：' + course.duration + '分钟' : ''}
+		{ course.duration ? '时长：' + Math.round(course.duration/60) + '分钟' : ''}
 	</div>
 )
 
