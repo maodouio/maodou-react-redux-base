@@ -6,7 +6,6 @@ const defaultState = {
 }
 
 export default (state = defaultState, action) => {
-  console.log('[chat reducer]', state, action)
   const payload = action.payload
 
   switch (action.type) {
@@ -22,7 +21,6 @@ export default (state = defaultState, action) => {
         addChatStatus: 'SUCCESS',
       }
     default:
-      console.log('[reducer] default')
       return state
   }
 }

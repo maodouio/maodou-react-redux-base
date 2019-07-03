@@ -1,5 +1,5 @@
 // 获取页面路径的query参数
-export const queryString = () => {
+export function queryString() {
   let _queryString = {}
   const _query = window.location.search.substr(1)
   const _vars = _query.split('&')
@@ -15,4 +15,10 @@ export const queryString = () => {
     }
   })
   return _queryString
+}
+
+// 获取高度
+// 3/4 9/16 7/18
+export function genHeight(ratio = 9 / 16) {
+  return Math.floor(window.innerWidth * ratio) + 'px'
 }

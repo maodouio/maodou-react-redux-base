@@ -1,55 +1,35 @@
-// these imports is used in pure React App
-import React from 'react'
-import CoursesList from '../components/CoursesList'
-import CourseItem from '../components/CourseItem'
-import { Component } from 'react'
-
-import AddCourse from '../components/CourseNew'
+import React, { Component } from 'react'
+import Debug from 'debug'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
+import CourseItem from '../components/common/CourseItem'
+import fetchData from '../actions/fetchData'
 import { actionGetCourses } from '../actions/course'
 
-import fetchData from '../api/fetch'
-import { bindActionCreators } from 'redux'
+const debug = Debug('maodou:home')
 
 class CoursesContainer extends Component {
   componentDidMount() {
+    debug('[start fetching courses]')
     this.props.fetchData(actionGetCourses())
   }
 
-  handleClick(course) {
-    console.log('[handleClick()] add to my favorite course', course)
-  }
-
-  handleAddCourse = title => {}
-
   render() {
-    console.log('this.props', this.props)
     const { coursesArray } = this.props
-    console.log('coursesArray', coursesArray)
-
     return (
       <div>
-        <CoursesList name="Maodou-Classes">
-          {coursesArray &&
-            coursesArray.map(course => (
-              <CourseItem
-                key={course._id}
-                course={course}
-                handleClick={e => this.handleClick(course, e)}
-              />
-            ))}
-        </CoursesList>
-        <hr />
-        <AddCourse handleSubmit={this.handleAddCourse} />
+        {coursesArray.map(course => (
+          <CourseItem key={course._id} course={course} />
+        ))}
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps', state)
   const { course } = state
+  debug('[map course state to props]', course)
   return course
 }
 

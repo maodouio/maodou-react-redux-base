@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-
-import fetchData from '../api/fetch'
+import Hls from 'hls.js'
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { actionShowCourse } from '../actions/course'
-import { connect } from 'react-redux'
-
-import Hls from 'hls.js'
-
 import ChatsContainer from './ChatsContainer'
-// import AddChat from '../components/ChatNew'
+import fetchData from '../actions/fetchData'
+import { actionShowCourse } from '../actions/course'
 import { actionAddChat } from '../actions/chat'
 
 class CourseContainer extends Component {

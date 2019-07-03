@@ -1,8 +1,11 @@
+@import 'styles/theme.scss';
+
 .wrap {
-  color: #f44;
-  max-width: 600px;
+  color: $base-text-color;
+  max-width: $max-mobile-width;
+  position: relative;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: $color-white;
   // overflow: hidden;
-  height: 100vh;
+  // height: 100vh;
 }

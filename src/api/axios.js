@@ -9,7 +9,6 @@ export default (method, url, data = {}) => {
   } else {
     reqData = { method, url, headers, data }
   }
-  //console.log('before axios reqData', reqData)
   return new Promise((resolve, reject) => {
     axios(reqData)
       .then(res => {

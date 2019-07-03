@@ -1,23 +1,21 @@
-import fetchApi from './axios'
+import fetchApi from '../api/axios'
 import Debug from 'debug'
-
-const debug = Debug('maodou:api/fetch.js')
+const debug = Debug('maodou:action:fetchData')
 
 export default api => {
-  debug('[callApi] api called', api)
-
+  debug('[fetchData start]', api)
   const [requestType, successType, failureType] = api.types
 
   return (dispatch, getState) => {
     dispatch({ type: requestType })
     fetchApi(api.method, api.url, api.data)
       .then(data => {
-        debug('[callApi] returned', { data })
+        debug('[fetchData success]', { data })
         dispatch({ type: successType, payload: data })
       })
       .catch(err => {
         console.log(err)
-        debug('[callApi] ERR', err)
+        debug('[fetchData error]', err)
         dispatch({ type: failureType })
       })
   }

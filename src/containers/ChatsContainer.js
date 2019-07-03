@@ -1,14 +1,10 @@
-// these imports is used in pure React App
-import React from 'react'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { actionGetChats } from '../actions/chat'
-
-import fetchData from '../api/fetch'
 import { bindActionCreators } from 'redux'
 
 import AddChat from '../components/ChatNew'
+import { actionGetChats } from '../actions/chat'
+import fetchData from '../actions/fetchData'
 import { actionAddChat } from '../actions/chat'
 
 class ChatsContainer extends Component {
