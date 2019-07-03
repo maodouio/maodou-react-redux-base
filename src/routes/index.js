@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import Home from 'pages/home'
 import Course from 'pages/course'
@@ -11,6 +11,7 @@ export default () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/course/:id" component={Course} />
       <Route exact path="/test" component={Test} />
+      <Redirect to="/404" />
     </Switch>
   )
 }

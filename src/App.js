@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import LoginLayout from './layouts/LoginLayout'
-import NotFound from './pages/404'
+import NotFound from './pages/404/'
 
 export default () => (
   <Router>

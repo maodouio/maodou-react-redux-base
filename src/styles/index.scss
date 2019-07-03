@@ -9,13 +9,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  height: 100%;
+  width: 100%;
+  background-color: #f7f7f7;
 }
 
 img {
   border-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 article,

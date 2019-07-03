@@ -1,27 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import CoursesContainer from './CoursesContainer'
+import Helmet from 'components/Helmet'
+import Header from '../components/home/Header'
+import Footer from '../components/home/Footer'
 
 class Home extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <a
-            className="App-link"
-            href="https://maodou.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Maodou
-          </a>
-        </header>
-        <div>
-          <h2>Maodou Courses Example</h2>
-          <hr />
-          <CoursesContainer />
-          <hr />
-        </div>
-      </div>
+      <Fragment>
+        <Helmet title="首页" />
+        <Header />
+        <CoursesContainer />
+        <Footer />
+      </Fragment>
     )
   }
 }
