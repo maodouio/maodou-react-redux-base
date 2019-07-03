@@ -1,5 +1,5 @@
 [
-	{"_id":"123", "title":"Class 1", "members": ["1a", "1b", "1c"]},
-	{"_id":"456", "title":"Class 2", "members": ["2a", "2b"]},
-	{"_id":"789", "title":"Class 3", "members": ["3a", "3b", "3c", "3d"]}
+  { "_id": "123", "title": "Class 1", "members": ["1a", "1b", "1c"] },
+  { "_id": "456", "title": "Class 2", "members": ["2a", "2b"] },
+  { "_id": "789", "title": "Class 3", "members": ["3a", "3b", "3c", "3d"] }
 ]

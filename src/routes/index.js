@@ -6,11 +6,11 @@ import CourseContainer from '../containers/CourseContainer'
 import TestContainer from '../containers/TestContainer'
 
 export default () => {
-	return (
-		<Switch>
-			<Route exact path="/" component={Home} />
-			<Route exact path="/course/:id" component={CourseContainer} />
-			<Route exact path="/test" component={TestContainer} />
-		</Switch>
-	)
+  return (
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/course/:id" component={CourseContainer} />
+      <Route exact path="/test" component={TestContainer} />
+    </Switch>
+  )
 }
