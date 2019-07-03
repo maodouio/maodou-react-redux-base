@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import Hls from 'hls.js'
 
 import ChatsContainer from './ChatsContainer'
-import AddChat from '../components/ChatNew'
+// import AddChat from '../components/ChatNew'
 import { actionAddChat } from '../actions/chat'
 
 class CourseContainer extends Component {

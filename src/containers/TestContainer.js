@@ -8,7 +8,7 @@ import { actionGetChats } from '../actions/chat'
 import fetchData from '../api/fetch'
 import { bindActionCreators } from 'redux'
 
-import AddChat from '../components/ChatNew'
+// import AddChat from '../components/ChatNew'
 import { actionAddChat } from '../actions/chat'
 
 class TestContainer extends Component {

@@ -13,6 +13,9 @@ export default (method, url, data = {}) => {
   return new Promise((resolve, reject) => {
     axios(reqData)
       .then(res => {
+        // api返回的数据格式(res.data)
+        // 成功{errcode: 200, data: xx}
+        // 失败{errcode: xx, errmsg: xx}
         if (res.data.errcode === 200) {
           resolve(res.data.data)
         } else {
