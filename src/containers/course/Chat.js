@@ -1,60 +1,59 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
-import AddChat from '../../components/ChatNew'
-import { actionGetChats } from '../../actions/chat'
+import ChatBox from '../../components/chat/ChatBox'
+import ChatList from '../../components/chat/ChatList'
+import { actionGetChats, actionAddChat } from '../../actions/chat'
 import fetchData from '../../actions/fetchData'
-import { actionAddChat } from '../../actions/chat'
 
 class ChatsContainer extends Component {
-  // componentWillMount() {
-  //   const course_id = this.props && this.props.course_id
-  //   setInterval(() => {
-  //     this.props.fetchData(actionGetChats(course_id))
-  //   }, 5000)
-  // }
-  componentDidMount() {}
-  componentWillReceiveProps(props) {
-    const { addChatStatus } = props
-    const course_id = this.props && this.props.course_id
+  state = { chats: [], courseId: '' }
 
-    if (this.props.addChatStatus !== 'SUCCESS' && addChatStatus === 'SUCCESS') {
-      this.props.fetchData(actionGetChats(course_id))
+  componentDidMount() {
+    const {
+      match: { params },
+    } = this.props
+    this.setState({ courseId: params.id })
+    this.props.fetchData(actionGetChats(params.id))
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.chatsArray.length) {
+      return {
+        chats: prevState.chats.concat(nextProps.chatsArray),
+      }
+    }
+    return null
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (!prevProps.addChatStatus && this.props.addChatStatus === 'SUCCESS') {
+      this.props.fetchData(actionGetChats(prevState.courseId))
     }
   }
 
   handleAddChat = content => {
-    const course_id = this.props && this.props.course_id
     const nickname = 'Guest'
-
-    this.props.fetchData(actionAddChat(course_id, nickname, content))
+    this.props.fetchData(actionAddChat(this.state.courseId, nickname, content))
   }
 
   render() {
-    const { chatsArray } = this.props
-    const chats = chatsArray.chats
+    const { chats } = this.state
 
     return (
-      <div>
-        <AddChat handleSubmit={this.handleAddChat} />
-        <hr />
-        {chats &&
-          chats.map(c => (
-            <div key={c.createdAt}>
-              <img src={c.headimgurl} alt="avatar" width="20px" /> &nbsp;
-              {c.nickname}: {c.content}
-            </div>
-          ))}
-      </div>
+      <Fragment>
+        <ChatList chats={chats} />
+        <ChatBox handleSubmit={this.handleAddChat} />
+      </Fragment>
     )
   }
 }
 
 const mapStateToProps = state => {
-  const { chat, course } = state
-  return { ...chat, courseId: course.currentCourseId }
+  const { chat } = state
+  return chat
 }
 
 const mapDispatchToProps = dispatch =>

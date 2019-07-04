@@ -12,7 +12,7 @@ export default (state = defaultState, action) => {
     case GET_CHATS_SUCCESS:
       return {
         ...state,
-        chatsArray: payload,
+        chatsArray: payload.chats,
         addChatStatus: '',
       }
     case ADD_CHAT_SUCCESS:

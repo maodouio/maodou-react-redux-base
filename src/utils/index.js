@@ -23,6 +23,7 @@ export function genHeight(ratio = 9 / 16) {
   return Math.floor(window.innerWidth * ratio) + 'px'
 }
 
+// 秒转换为小时
 export const genTimeStr = secNum => {
   if (secNum) {
     const hours = Math.floor(secNum / 3600)
@@ -45,6 +46,7 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+// 格式化时间
 export const formatTime = (date, all = true) => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1

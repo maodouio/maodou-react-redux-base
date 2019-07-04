@@ -10,13 +10,13 @@ export default ({ handleNavBar, currentTab }) => {
         className={isChat ? `${styles.active} ${styles.item}` : styles.item}
         onClick={() => handleNavBar('chat')}
       >
-        互动交流
+        <span>互动交流</span>
       </div>
       <div
         className={isChat ? styles.item : `${styles.active} ${styles.item}`}
         onClick={() => handleNavBar('info')}
       >
-        课程详情
+        <span>课程详情</span>
       </div>
     </div>
   )
