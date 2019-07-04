@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import ChatsContainer from './Chat'
-import Top from './Top'
+import TopVideo from './TopVideo'
 import fetchData from '../../actions/fetchData'
 import { actionShowCourse, setCourseId } from '../../actions/course'
 
@@ -23,10 +23,10 @@ class CourseContainer extends Component {
 
   render() {
     return (
-      <div>
-        <Top />
+      <Fragment>
+        <TopVideo />
         <ChatsContainer />
-      </div>
+      </Fragment>
     )
   }
 }

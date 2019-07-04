@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
 import AddChat from '../../components/ChatNew'
@@ -14,6 +15,7 @@ class ChatsContainer extends Component {
   //     this.props.fetchData(actionGetChats(course_id))
   //   }, 5000)
   // }
+  componentDidMount() {}
 
   componentWillReceiveProps(props) {
     const { addChatStatus } = props
@@ -59,7 +61,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchData }, dispatch)
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(ChatsContainer)
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  )(ChatsContainer),
+)
