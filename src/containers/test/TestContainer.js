@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import fetchData from '../actions/fetchData'
-import { actionGetChats } from '../actions/chat'
-import { actionAddChat } from '../actions/chat'
+import fetchData from '../../actions/fetchData'
+import { actionGetChats } from '../../actions/chat'
+import { actionAddChat } from '../../actions/chat'
 
 class TestContainer extends Component {
   componentDidMount() {

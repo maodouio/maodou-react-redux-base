@@ -14,7 +14,7 @@
 }
 
 .carousel {
-  height: $max-mobile-width * 7/18;
+  height: calc(100vw * 7 / 18);
   background-color: $color-danger;
   margin-bottom: 10px;
 }

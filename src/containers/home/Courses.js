@@ -3,9 +3,9 @@ import Debug from 'debug'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import CourseItem from '../components/common/CourseItem'
-import fetchData from '../actions/fetchData'
-import { actionGetCourses } from '../actions/course'
+import CourseItem from '../../components/common/CourseItem'
+import fetchData from '../../actions/fetchData'
+import { actionGetCourses } from '../../actions/course'
 
 const debug = Debug('maodou:home')
 

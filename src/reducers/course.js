@@ -1,11 +1,13 @@
 import {
   SHOW_COURSE_SUCCESS,
   GET_COURSES_SUCCESS,
+  SET_COURSE_ID,
 } from '../actions/actionTypes'
 
 const defaultState = {
   coursesArray: [],
   courseInfo: {},
+  currentCourseId: '',
 }
 
 export default (state = defaultState, action) => {
@@ -21,6 +23,11 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         courseInfo: payload,
+      }
+    case SET_COURSE_ID:
+      return {
+        ...state,
+        currentCourseId: payload,
       }
     default:
       return state

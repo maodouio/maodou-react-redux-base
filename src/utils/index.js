@@ -22,3 +22,20 @@ export function queryString() {
 export function genHeight(ratio = 9 / 16) {
   return Math.floor(window.innerWidth * ratio) + 'px'
 }
+
+export const genTimeStr = secNum => {
+  if (secNum) {
+    const hours = Math.floor(secNum / 3600)
+    const minutes = Math.floor((secNum - hours * 3600) / 60)
+    // const seconds = secNum - hours * 3600 - minutes * 60
+    return hours > 0 ? `${hours}小时${minutes}分` : `${minutes}分`
+  }
+  return '即将开始'
+}
+
+export const genPrice = price => {
+  if (price !== 0) {
+    return `${price} 元`
+  }
+  return '免费'
+}

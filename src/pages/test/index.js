@@ -1,3 +1,3 @@
-import Test from 'containers/TestContainer'
+import Test from 'containers/test/TestContainer'
 
 export default Test
