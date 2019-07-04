@@ -5,22 +5,22 @@ import Ready from '../../components/course/Ready'
 import Playback from '../../components/course/Playback'
 import LiveVideo from '../../components/course/LiveVideo'
 
-class TopVideo extends Component {
+class MainSection extends Component {
   state = {
     course: {},
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.course !== prevState.course) {
-      return {
-        course: nextProps.course,
-      }
-    }
-    return null
-  }
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (nextProps.course !== prevState.course) {
+  //     return {
+  //       course: nextProps.course,
+  //     }
+  //   }
+  //   return null
+  // }
 
   render() {
-    const { course } = this.state
+    const { course } = this.props
     switch (course.state) {
       case CourseStates.READY:
       case CourseStates.PAUSED:
@@ -35,12 +35,12 @@ class TopVideo extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  const { course } = state
-  return { course: course.courseInfo }
-}
+// const mapStateToProps = state => {
+//   const { course } = state
+//   return { course: course.courseInfo }
+// }
 
 export default connect(
-  mapStateToProps,
   null,
-)(TopVideo)
+  null,
+)(MainSection)

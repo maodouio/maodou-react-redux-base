@@ -22,10 +22,12 @@ export default class LiveVideo extends Component {
       video.play()
     })
 
-    video.setAttribute('x5-playsinline', '')
-    video.setAttribute('playsinline', '')
-    video.setAttribute('webkit-playsinline', '')
+    // video.setAttribute('x5-playsinline', 'true')
     video.setAttribute('x-webkit-airplay', 'allow')
+    video.setAttribute('webkit-playsinline', 'true')
+    video.setAttribute('x5-video-player-type', 'h5-page')
+    video.setAttribute('x5-video-player-fullscreen', 'true')
+    video.setAttribute('playsinline', 'true')
   }
 
   componentWillUnmount() {

@@ -16,7 +16,6 @@ class ChatsContainer extends Component {
   //   }, 5000)
   // }
   componentDidMount() {}
-
   componentWillReceiveProps(props) {
     const { addChatStatus } = props
     const course_id = this.props && this.props.course_id

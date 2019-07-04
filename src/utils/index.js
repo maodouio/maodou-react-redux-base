@@ -39,3 +39,25 @@ export const genPrice = price => {
   }
   return '免费'
 }
+
+const formatNumber = n => {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+export const formatTime = (date, all = true) => {
+  const year = date.getFullYear()
+  const month = date.getMonth() + 1
+  const day = date.getDate()
+  const hour = date.getHours()
+  const minute = date.getMinutes()
+  // const second = date.getSeconds();
+  if (all) {
+    return (
+      [year, month, day].map(formatNumber).join('-') +
+      ' ' +
+      [hour, minute].map(formatNumber).join(':')
+    )
+  }
+  return [year, month, day].map(formatNumber).join('/')
+}
