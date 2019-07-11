@@ -40,6 +40,7 @@ class CourseContainer extends Component {
   render() {
     const { currentTab } = this.state
     const { course } = this.props
+
     return (
       <div style={styles.wrap}>
         <Helmet title={course.name || '加载中'} />

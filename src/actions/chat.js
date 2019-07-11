@@ -3,13 +3,15 @@ import {
   GET_CHATS_START,
   GET_CHATS_SUCCESS,
   GET_CHATS_FAILURE,
-} from './actionTypes'
-
-import {
   ADD_CHAT_START,
   ADD_CHAT_SUCCESS,
   ADD_CHAT_FAILURE,
+  RESET_CHATS,
 } from './actionTypes'
+
+export const resetChats = () => ({
+  type: RESET_CHATS,
+})
 
 export const actionGetChats = course_id => ({
   types: [GET_CHATS_START, GET_CHATS_SUCCESS, GET_CHATS_FAILURE],

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 
 import ChatBox from '../../components/chat/ChatBox'
 import ChatList from '../../components/chat/ChatList'
-import { actionGetChats, actionAddChat } from '../../actions/chat'
+import { actionGetChats, actionAddChat, resetChats } from '../../actions/chat'
 import fetchData from '../../actions/fetchData'
 
 class ChatsContainer extends Component {
@@ -34,6 +34,10 @@ class ChatsContainer extends Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.resetChats()
+  }
+
   handleAddChat = content => {
     const nickname = 'Guest'
     this.props.fetchData(actionAddChat(this.state.courseId, nickname, content))
@@ -56,7 +60,7 @@ const mapStateToProps = state => {
   return chat
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({ fetchData }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchData, resetChats }, dispatch)
 
 export default withRouter(
   connect(

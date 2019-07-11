@@ -1,6 +1,7 @@
 import {
   SHOW_COURSE_SUCCESS,
   GET_COURSES_SUCCESS,
+  SHOW_COURSE_FAILURE,
   SET_COURSE_ID,
 } from '../actions/actionTypes'
 
@@ -23,6 +24,10 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         courseInfo: payload,
+      }
+    case SHOW_COURSE_FAILURE:
+      return {
+        ...state,
       }
     case SET_COURSE_ID:
       return {
