@@ -36,18 +36,24 @@ class CourseContainer extends Component {
     const { currentTab } = this.state
     const { course } = this.props
     return (
-      <Fragment>
+      <div style={styles.wrap}>
         <Helmet title={course.name || '加载中'} />
         <MainSection course={course} />
-        <Navbar
-          currentTab={currentTab}
-          handleNavBar={this.handleNavBar.bind(this)}
-        />
+        <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
         {currentTab === 'chat' ? <ChatsContainer /> : null}
         {currentTab === 'info' ? <Detail course={course} /> : null}
-      </Fragment>
+      </div>
     )
   }
+}
+
+const styles = {
+  wrap: {
+    height: '100vh',
+    overflow: 'hidden',
+    display: 'flex',
+    flexFlow: 'column nowrap',
+  },
 }
 
 const mapStateToProps = state => {
@@ -55,8 +61,7 @@ const mapStateToProps = state => {
   return { course: course.courseInfo }
 }
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ fetchData, setCourseId }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchData, setCourseId }, dispatch)
 
 export default connect(
   mapStateToProps,

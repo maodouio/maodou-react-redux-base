@@ -14,13 +14,9 @@ export default class ChatBox extends Component {
     const { chats } = this.props
     return (
       <ul className={styles.chatlist}>
-        {chats.map(item => (
-          <li key={item._id} className={styles.item}>
-            <img
-              className={styles.img}
-              src={this._avatar(item.headimgurl)}
-              alt="avatar"
-            />
+        {chats.map((item, index) => (
+          <li key={index} className={styles.item}>
+            <img className={styles.img} src={this._avatar(item.headimgurl)} alt="avatar" />
             <div className={styles.user}>
               <p className={styles.name}>{item.nickname}</p>
               <p className={styles.content}>{item.content}</p>

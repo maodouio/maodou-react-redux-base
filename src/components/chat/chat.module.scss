@@ -2,7 +2,7 @@
 
 .chatbox {
   height: auto;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.05);
@@ -45,7 +45,8 @@
 .chatlist {
   background-color: $bg-color;
   overflow: scroll;
-  height: calc(100vh - 100vw * 9 / 16 - 50px);
+  // height: calc(100vh - 100vw * 9 / 16 - 50px);
+  flex: 1;
   -webkit-overflow-scrolling: touch;
   padding: 15px;
   color: #666;

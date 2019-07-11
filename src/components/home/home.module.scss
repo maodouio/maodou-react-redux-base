@@ -15,6 +15,7 @@
 
 .carousel {
   height: calc(100vw * 7 / 18);
+  max-height: 233px;
   background-color: $color-danger;
   margin-bottom: 10px;
 }
