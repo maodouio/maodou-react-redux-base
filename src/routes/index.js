@@ -10,6 +10,7 @@ export default () => {
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/course/:id" component={Course} />
+      <Route exact path="/course/description/:id" component={Course} />
       <Route exact path="/test" component={Test} />
       <Redirect to="/404" />
     </Switch>
