@@ -1,4 +1,4 @@
-import { GET_CHATS_SUCCESS, ADD_CHAT_SUCCESS } from '../actions/actionTypes'
+import { GET_CHATS_SUCCESS, ADD_CHAT_SUCCESS, RESET_CHATS } from '../actions/actionTypes'
 
 const defaultState = {
   chatsArray: [],
@@ -19,6 +19,12 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         addChatStatus: 'SUCCESS',
+      }
+    case RESET_CHATS:
+      return {
+        ...state,
+        chatsArray: [],
+        addChatStatus: '',
       }
     default:
       return state

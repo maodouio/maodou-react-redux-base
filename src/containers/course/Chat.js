@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 
 import ChatBox from '../../components/chat/ChatBox'
 import ChatList from '../../components/chat/ChatList'
-import { actionGetChats, actionAddChat } from '../../actions/chat'
+import { actionGetChats, actionAddChat, resetChats } from '../../actions/chat'
 import fetchData from '../../actions/fetchData'
 
 class ChatsContainer extends Component {
@@ -22,7 +22,7 @@ class ChatsContainer extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.chatsArray.length) {
       return {
-        chats: prevState.chats.concat(nextProps.chatsArray),
+        chats: nextProps.chatsArray,
       }
     }
     return null
@@ -32,6 +32,10 @@ class ChatsContainer extends Component {
     if (!prevProps.addChatStatus && this.props.addChatStatus === 'SUCCESS') {
       this.props.fetchData(actionGetChats(prevState.courseId))
     }
+  }
+
+  componentWillUnmount() {
+    this.props.resetChats()
   }
 
   handleAddChat = content => {
@@ -56,8 +60,7 @@ const mapStateToProps = state => {
   return chat
 }
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ fetchData }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchData, resetChats }, dispatch)
 
 export default withRouter(
   connect(

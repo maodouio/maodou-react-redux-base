@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
@@ -7,6 +7,7 @@ import ChatsContainer from './Chat'
 import MainSection from './MainSection'
 import Navbar from '../../components/course/Navbar'
 import Detail from '../../components/course/Detail'
+import ActionBar from '../../components/course/ActionBar'
 import fetchData from '../../actions/fetchData'
 import { actionShowCourse, setCourseId } from '../../actions/course'
 
@@ -32,9 +33,14 @@ class CourseContainer extends Component {
     this.setState({ currentTab: value })
   }
 
+  handleReload() {
+    window.location.reload()
+  }
+
   render() {
     const { currentTab } = this.state
     const { course } = this.props
+
     return (
       <div style={styles.wrap}>
         <Helmet title={course.name || '加载中'} />
@@ -42,6 +48,7 @@ class CourseContainer extends Component {
         <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
         {currentTab === 'chat' ? <ChatsContainer /> : null}
         {currentTab === 'info' ? <Detail course={course} /> : null}
+        <ActionBar reloadPage={this.handleReload.bind(this)} />
       </div>
     )
   }

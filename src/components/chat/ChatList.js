@@ -12,6 +12,7 @@ export default class ChatBox extends Component {
 
   render() {
     const { chats } = this.props
+    chats.reverse()
     return (
       <ul className={styles.chatlist}>
         {chats.map((item, index) => (
