@@ -22,7 +22,7 @@ class ChatsContainer extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.chatsArray.length) {
       return {
-        chats: prevState.chats.concat(nextProps.chatsArray),
+        chats: nextProps.chatsArray,
       }
     }
     return null
@@ -56,8 +56,7 @@ const mapStateToProps = state => {
   return chat
 }
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ fetchData }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ fetchData }, dispatch)
 
 export default withRouter(
   connect(

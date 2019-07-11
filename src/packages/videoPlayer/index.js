@@ -36,7 +36,7 @@ class VideoPlayer extends Component {
     this.player = videojs(videoNode, playerOptions)
     this.player.src(props.src)
     this.player.poster(props.poster)
-    this.set_controls_visibility(this.player, props.hideControls)
+    this.set_controls_visibility(this.player, props.live)
 
     // videoNode.setAttribute('x5-playsinline', 'true')
     videoNode.setAttribute('x-webkit-airplay', 'allow')
@@ -48,6 +48,7 @@ class VideoPlayer extends Component {
 
   generate_player_options(props) {
     const playerOptions = {}
+    playerOptions.liveui = props.live
     playerOptions.controls = props.controls
     playerOptions.autoplay = props.autoplay
     playerOptions.preload = props.preload
@@ -60,9 +61,15 @@ class VideoPlayer extends Component {
     return playerOptions
   }
 
-  set_controls_visibility(player, hidden_controls) {
+  set_controls_visibility(player, isLive) {
+    const playbackC = ['pictureinpicture']
+    const liveC = ['pictureinpicture', 'playbackrates', 'timer', 'seekbar']
     Object.keys(Controls).map(x => player.controlBar[Controls[x]].show())
-    hidden_controls.map(x => player.controlBar[Controls[x]].hide())
+    if (isLive) {
+      liveC.map(x => player.controlBar[Controls[x]].hide())
+    } else {
+      playbackC.map(x => player.controlBar[Controls[x]].hide())
+    }
   }
 
   init_player_events(props) {
@@ -72,7 +79,7 @@ class VideoPlayer extends Component {
 
     this.player.ready(() => {
       props.onReady(this.player)
-      window.player = this.player
+      // window.player = this.player
     })
     this.player.on('play', () => {
       props.onPlay(this.player.currentTime())

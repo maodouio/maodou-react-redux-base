@@ -11,6 +11,7 @@ export default class ChatBox extends Component {
     const value = input.value.trim()
     if (value.length <= 50) {
       this.props.handleSubmit(value)
+      input.value = ''
     }
   }
 
@@ -18,11 +19,7 @@ export default class ChatBox extends Component {
     return (
       <div className={styles.chatbox}>
         <div className={styles.box}>
-          <textarea
-            placeholder="说点什么吧"
-            ref={this.inputRef}
-            className={styles.area}
-          ></textarea>
+          <textarea placeholder="说点什么吧" ref={this.inputRef} className={styles.area}></textarea>
           <div onClick={this.handleInput} className={styles.btn}>
             <span>发送</span>
           </div>
