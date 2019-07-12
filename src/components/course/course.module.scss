@@ -1,6 +1,7 @@
 @import 'styles/theme.scss';
 
 .wrap {
+  z-index: 1000;
   background-color: $color-black;
   height: calc(100vw * 9 / 16);
   max-height: 337px;

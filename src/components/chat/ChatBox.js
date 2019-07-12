@@ -18,13 +18,10 @@ export default class ChatBox extends Component {
   }
 
   handleBlur(e) {
-    // this.chatBoxRef.current.style.visibility = 'visible'
+    // this.props.handleBlur()
   }
   handleFocus(e) {
-    this.chatBoxRef.current.style.visibility = 'hidden'
-    setTimeout(() => {
-      this.chatBoxRef.current.style.visibility = 'visible'
-    }, 300)
+    // this.props.handleFocus()
   }
 
   openEmojiList() {}

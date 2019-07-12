@@ -37,3 +37,4 @@ config.json
 db_*.json
 .env
 .deploy/toCDN.sh
+build.js
