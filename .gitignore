@@ -35,3 +35,4 @@ cert/
 
 config.json
 db_*.json
+.deploy/toCDN.sh
