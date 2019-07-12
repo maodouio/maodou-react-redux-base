@@ -1,15 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import Helmet from 'components/Helmet'
-import ChatsContainer from './Chat'
-import MainSection from './MainSection'
+import Loading from 'components/common/Loading'
 import Navbar from '../../components/course/Navbar'
-import Detail from '../../components/course/Detail'
 import ActionBar from '../../components/course/ActionBar'
+import Detail from '../../components/course/Detail'
 import fetchData from '../../actions/fetchData'
 import { actionShowCourse, setCourseId } from '../../actions/course'
+
+const ChatsContainer = lazy(() => import('./Chat'))
+const MainSection = lazy(() => import('./MainSection'))
 
 class CourseContainer extends Component {
   state = {
@@ -44,9 +46,13 @@ class CourseContainer extends Component {
     return (
       <div style={styles.wrap}>
         <Helmet title={course.name || '加载中'} />
-        <MainSection course={course} />
+        <Suspense fallback={<Loading />}>
+          <MainSection course={course} />
+        </Suspense>
         <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
-        {currentTab === 'chat' ? <ChatsContainer /> : null}
+        <Suspense fallback={<Loading />}>
+          {currentTab === 'chat' ? <ChatsContainer /> : null}
+        </Suspense>
         {currentTab === 'info' ? <Detail course={course} /> : null}
         <ActionBar reloadPage={this.handleReload.bind(this)} />
       </div>

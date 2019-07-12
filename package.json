@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:cdn": "PUBLIC_URL='https://maodouiossl.cdn.maodou.io' react-scripts build",
     "test": "react-scripts test",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "eject": "react-scripts eject"
@@ -23,8 +24,10 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
+    "react-window": "^1.8.5",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "video.js": "^7.6.0"
   },
   "devDependencies": {
     "husky": "^3.0.0",

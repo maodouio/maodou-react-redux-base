@@ -1,9 +1,11 @@
-import React, { Component, Fragment } from 'react'
-import HomeCourses from '../../containers/home/Courses'
+import React, { Component, Fragment, lazy, Suspense } from 'react'
 import Helmet from 'components/Helmet'
 import Header from '../../components/home/Header'
 import Footer from '../../components/home/Footer'
 import Carousel from '../../components/home/Carousel'
+import Loading from '../../components/common/Loading'
+
+const HomeCourses = lazy(() => import('../../containers/home/Courses'))
 
 class Home extends Component {
   render() {
@@ -12,7 +14,9 @@ class Home extends Component {
         <Helmet title="首页" />
         <Header />
         <Carousel />
-        <HomeCourses />
+        <Suspense fallback={<Loading />}>
+          <HomeCourses />
+        </Suspense>
         <Footer />
       </Fragment>
     )
