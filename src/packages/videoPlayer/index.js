@@ -48,9 +48,16 @@ class VideoPlayer extends Component {
 
   generate_player_options(props) {
     const playerOptions = {}
+    playerOptions.controlBar = {
+      volumePanel: {
+        inline: false,
+      },
+    }
     playerOptions.liveui = props.live
     playerOptions.controls = props.controls
     playerOptions.autoplay = props.autoplay
+    playerOptions.loop = props.loop
+    playerOptions.muted = props.muted
     playerOptions.preload = props.preload
     playerOptions.width = props.width
     playerOptions.height = props.height

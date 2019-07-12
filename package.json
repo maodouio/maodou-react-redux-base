@@ -2,9 +2,21 @@
   "name": "maodou-react-redux-base",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "axios": "^0.19.0",
-    "hls.js": "^0.10.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
@@ -14,12 +26,12 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "source-map-explorer": "^2.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,17 +47,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
-  },
-  "devDependencies": {
-    "husky": "^3.0.0",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1",
-    "source-map-explorer": "^2.0.1"
   }
 }
