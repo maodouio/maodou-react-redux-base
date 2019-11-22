@@ -7,8 +7,11 @@ import Loading from 'components/common/Loading'
 import Navbar from '../../components/course/Navbar'
 import ActionBar from '../../components/course/ActionBar'
 import Detail from '../../components/course/Detail'
+import VideoHeader from '../../components/course/VideoHeader'
 import fetchData from '../../actions/fetchData'
 import { actionShowCourse, setCourseId } from '../../actions/course'
+
+import styles from './courseLayout.module.scss'
 
 const ChatsContainer = lazy(() => import('./Chat'))
 const MainSection = lazy(() => import('./MainSection'))
@@ -44,30 +47,36 @@ class CourseContainer extends Component {
     const { course } = this.props
 
     return (
-      <div style={styles.wrap}>
+      <div className={styles.layoutWrap}>
         <Helmet title={course.name || '加载中'} />
-        <Suspense fallback={<Loading />}>
-          <MainSection course={course} />
-        </Suspense>
-        <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
-        <Suspense fallback={<Loading />}>
-          {currentTab === 'chat' ? <ChatsContainer /> : null}
-        </Suspense>
-        {currentTab === 'info' ? <Detail course={course} /> : null}
+        <div className={styles.leftWrap}>
+          <VideoHeader course={course}></VideoHeader>
+          <Suspense fallback={<Loading />}>
+            <MainSection course={course} />
+          </Suspense>
+        </div>
+        <div className={styles.rightWrap}>
+          <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
+          <Suspense fallback={<Loading />}>
+            {currentTab === 'chat' ? <ChatsContainer /> : null}
+          </Suspense>
+          {currentTab === 'info' ? <Detail course={course} /> : null}
+        </div>
+
         <ActionBar reloadPage={this.handleReload.bind(this)} />
       </div>
     )
   }
 }
 
-const styles = {
-  wrap: {
-    height: '100vh',
-    overflow: 'hidden',
-    display: 'flex',
-    flexFlow: 'column nowrap',
-  },
-}
+// const styles = {
+//   wrap: {
+//     height: '100vh',
+//     overflow: 'hidden',
+//     display: 'flex',
+//     flexFlow: 'column nowrap',
+//   },
+// }
 
 const mapStateToProps = state => {
   const { course } = state
