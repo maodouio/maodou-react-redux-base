@@ -69,14 +69,14 @@ class VideoPlayer extends Component {
   }
 
   set_controls_visibility(player, isLive) {
-    const playbackC = ['pictureinpicture']
-    const liveC = ['pictureinpicture', 'playbackrates', 'timer', 'seekbar']
-    Object.keys(Controls).map(x => player.controlBar[Controls[x]].show())
-    if (isLive) {
-      liveC.map(x => player.controlBar[Controls[x]].hide())
-    } else {
-      playbackC.map(x => player.controlBar[Controls[x]].hide())
-    }
+    // const playbackC = ['pictureinpicture']
+    // const liveC = ['pictureinpicture', 'playbackrates', 'timer', 'seekbar']
+    // Object.keys(Controls).map(x => player.controlBar[Controls[x]].show())
+    // if (isLive) {
+    //   liveC.map(x => player.controlBar[Controls[x]].hide())
+    // } else {
+    //   playbackC.map(x => player.controlBar[Controls[x]].hide())
+    // }
   }
 
   init_player_events(props) {
