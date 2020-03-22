@@ -4,19 +4,19 @@ import videojs from 'video.js'
 import 'video.js/dist/video-js.css'
 import video_zhCN from 'video.js/dist/lang/zh-CN.json'
 
-const Controls = {
-  play: 'playToggle',
-  volume: 'volumePanel',
-  seekbar: 'progressControl',
-  // currentTimer: 'currentTimeDisplay',
-  // divider: 'timeDivider',
-  // duration: 'durationDisplay',
-  timer: 'remainingTimeDisplay',
-  // live: 'liveDisplay',
-  playbackrates: 'playbackRateMenuButton',
-  fullscreen: 'fullscreenToggle',
-  pictureinpicture: 'pictureInPictureToggle',
-}
+// const Controls = {
+//   play: 'playToggle',
+//   volume: 'volumePanel',
+//   seekbar: 'progressControl',
+//   // currentTimer: 'currentTimeDisplay',
+//   // divider: 'timeDivider',
+//   // duration: 'durationDisplay',
+//   timer: 'remainingTimeDisplay',
+//   // live: 'liveDisplay',
+//   playbackrates: 'playbackRateMenuButton',
+//   fullscreen: 'fullscreenToggle',
+//   pictureinpicture: 'pictureInPictureToggle',
+// }
 
 class VideoPlayer extends Component {
   constructor(props) {
