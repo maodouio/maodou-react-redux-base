@@ -2,9 +2,9 @@
 
 .wrap {
   z-index: 1000;
-  background-color: $color-black;
-  height: calc(100vw * 9 / 16);
-  max-height: 337px;
+  // background-color: $color-black;
+  // height: calc(100vw * 9 / 16);
+  // max-height: 337px;
   position: relative;
   font-size: 18px;
   color: #666;
@@ -141,6 +141,8 @@
 .headerWrap {
   width: 100%;
   min-height: 60px;
+  // height: 60px;
+  max-height: 100px;
   padding-left: 14px;
   display: flex;
   align-items: center;
@@ -153,7 +155,6 @@
       margin-top: 8px;
     }
   }
-
 }
 
 /* pc */
@@ -161,10 +162,9 @@
   .wrap {
     width: 100%;
     max-height: 100%;
+    margin-bottom: auto;
   }
   .headerWrap {
     flex: 1;
   }
-
-
 }
