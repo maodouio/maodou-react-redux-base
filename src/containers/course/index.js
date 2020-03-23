@@ -50,10 +50,10 @@ class CourseContainer extends Component {
       <div className={styles.layoutWrap}>
         <Helmet title={course.name || '加载中'} />
         <div className={styles.leftWrap}>
-          <VideoHeader course={course}></VideoHeader>
           <Suspense fallback={<Loading />}>
             <MainSection course={course} />
           </Suspense>
+          <VideoHeader course={course}></VideoHeader>
         </div>
         <div className={styles.rightWrap}>
           <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
@@ -85,7 +85,4 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchData, setCourseId }, dispatch)
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(CourseContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(CourseContainer)
