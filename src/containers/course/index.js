@@ -48,22 +48,24 @@ class CourseContainer extends Component {
 
     return (
       <div className={styles.layoutWrap}>
-        <Helmet title={course.name || '加载中'} />
-        <div className={styles.leftWrap}>
-          <Suspense fallback={<Loading />}>
-            <MainSection course={course} />
-          </Suspense>
-          <VideoHeader course={course}></VideoHeader>
-        </div>
-        <div className={styles.rightWrap}>
-          <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
-          <Suspense fallback={<Loading />}>
-            {currentTab === 'chat' ? <ChatsContainer /> : null}
-          </Suspense>
-          {currentTab === 'info' ? <Detail course={course} /> : null}
-        </div>
+        <VideoHeader course={course}></VideoHeader>
+        <div className={styles.bodyWrap}>
+          <Helmet title={course.name || '加载中'} />
+          <div className={styles.leftWrap}>
+            <Suspense fallback={<Loading />}>
+              <MainSection course={course} />
+            </Suspense>
+          </div>
+          <div className={styles.rightWrap}>
+            <Navbar currentTab={currentTab} handleNavBar={this.handleNavBar.bind(this)} />
+            <Suspense fallback={<Loading />}>
+              {currentTab === 'chat' ? <ChatsContainer /> : null}
+            </Suspense>
+            {currentTab === 'info' ? <Detail course={course} /> : null}
+          </div>
 
-        <ActionBar reloadPage={this.handleReload.bind(this)} />
+          <ActionBar reloadPage={this.handleReload.bind(this)} />
+        </div>
       </div>
     )
   }
