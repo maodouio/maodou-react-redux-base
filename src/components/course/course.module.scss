@@ -140,7 +140,7 @@
 
 .headerWrap {
   width: 100%;
-  min-height: 60px;
+  min-height: 40px;
   // height: 60px;
   // max-height: 100px;
   padding-left: 14px;
@@ -149,11 +149,12 @@
   .title {
     font-size: 18px;
     color: #333333;
-    .time {
-      color: $base-text-color;
-      font-size: 12px;
-      margin-top: 8px;
-    }
+  }
+  .time {
+    color: $base-text-color;
+    font-size: 12px;
+    // margin-top: 8px;
+    margin-left: 20px;
   }
 }
 
