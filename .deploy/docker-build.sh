@@ -5,4 +5,4 @@ echo '开始生成build文件...'
 npm run build
 
 echo '开始打包镜像...'
-docker build -t="maodou-react-redux-base:latest" .
+docker build -t="maodou-react-redux-base:aicug" .

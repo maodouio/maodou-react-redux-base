@@ -1,10 +1,10 @@
-docker rm -f maodou-react-redux-base
+docker rm -f aicug-base
 
 docker run \
        -d \
-       --name=maodou-react-redux-base \
+       --name=aicug-base \
        --restart=always \
-	-e VIRTUAL_HOST=demo.maodoulive.com \
+	-e VIRTUAL_HOST=aicug-base.maodoulive.com \
        -p 8800:5000 \
        -e TZ=Asia/Shanghai \
-       maodou-react-redux-base:latest
+       maodou-react-redux-base:aicug
