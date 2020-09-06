@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:cdn": "PUBLIC_URL='https://maodouiossl.cdn.maodou.io' react-scripts build",
+    "build:cdn": "PUBLIC_URL='https://maodouiossl.cdn.maodouio.com' react-scripts build",
     "test": "react-scripts test",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "eject": "react-scripts eject"

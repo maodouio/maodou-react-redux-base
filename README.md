@@ -2,6 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## aicug部署步骤
+
+因为toCDN.sh包含敏感账号信息，所以没放到库里
+
+```
+npm i
+npm run build:cdn
+sh .deploy/docker-build.sh
+sh .deploy/docker-run.sh
+sh .deploy/toCDN.sh
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
