@@ -21,6 +21,8 @@ class MainSection extends Component {
 
   render() {
     const { course } = this.props
+
+    console.log('course in maincourse', course)
     switch (course.state) {
       case CourseStates.READY:
       case CourseStates.PAUSED:
@@ -40,7 +42,4 @@ class MainSection extends Component {
 //   return { course: course.courseInfo }
 // }
 
-export default connect(
-  null,
-  null,
-)(MainSection)
+export default connect(null, null)(MainSection)

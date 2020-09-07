@@ -45,6 +45,7 @@ class CourseContainer extends Component {
   render() {
     const { currentTab } = this.state
     const { course } = this.props
+    console.log('course', course)
 
     return (
       <div className={styles.layoutWrap}>
