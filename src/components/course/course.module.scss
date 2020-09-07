@@ -4,7 +4,7 @@
   z-index: 1000;
   background-color: $color-black;
   height: calc(100vw * 9 / 16);
-  max-height: 337px;
+  // max-height: 337px;
   position: relative;
   font-size: 18px;
   color: #666;
@@ -153,7 +153,6 @@
       margin-top: 8px;
     }
   }
-
 }
 
 /* pc */
@@ -165,6 +164,4 @@
   .headerWrap {
     flex: 1;
   }
-
-
 }
