@@ -3,16 +3,18 @@ import styles from './course.module.scss'
 import VideoPlayer from '../../packages/videoPlayer'
 
 export default class Playback extends Component {
-  _playUrl(recordUrl, type) {
-    // if (type === 'liveVideo' || type === 'live') {
-    //   return recordUrl.hls
-    // }
-    return recordUrl.mp4
+  _playUrl(recordUrl, course) {
+    if (course.state === 'PLAYBACK') return recordUrl.mp4
+
+    const type = course.type
+    if (type === 'liveVideo' || type === 'live') {
+      return recordUrl.hls
+    }
   }
 
   render() {
     const { course } = this.props
-    const url = this._playUrl(course.recordUrl, course.type)
+    const url = this._playUrl(course.recordUrl, course)
 
     console.log('url', url)
     return (
